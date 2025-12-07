@@ -1,101 +1,95 @@
-// import React from 'react'
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
+
 function Landing() {
-      const bgRef = useRef(null);
-  const textRef = useRef(null);
+  const cardRefs = useRef([]);
+  cardRefs.current = [];
+
+  const addCardRef = (el) => {
+    if (el && !cardRefs.current.includes(el)) {
+      cardRefs.current.push(el);
+    }
+  };
 
   useEffect(() => {
-    const bg = bgRef.current;
-    const txt = textRef.current;
-
-    // Background slow movement + zoom
-    gsap.to(bg, {
-      y: 150,        // slow downward motion
-      scale: 1.2,    // Netflix style slight zoom
-      ease: "none",
-      scrollTrigger: {
-        trigger: bg,
-        start: "top top",
-        end: "bottom top",
-        scrub: 1.5,
-      },
-    });
-
-    // Text fade in & move up
-    gsap.fromTo(
-      txt,
-      { opacity: 0, y: 50 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1.5,
-        ease: "power3.out",
+    cardRefs.current.forEach((card) => {
+      gsap.to(card, {
+        y: 220,
+        scale: 1.1,
+        ease: "none",
         scrollTrigger: {
-          trigger: txt,
-          start: "top 80%",
+          trigger: card,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1.5,
         },
-      }
-    );
+      });
+    });
   }, []);
 
   return (
+    <div style={{ padding: "20px" }}>
 
- <div style={{ height: "200vh", width: "100%", background: "#000" }}>
-      {/* HERO SECTION */}
+      {/* === ROW 1 === */}
       <div
         style={{
-          position: "relative",
-          height: "100vh",
-          width: "100%",
-          overflow: "hidden",
+          display: "flex",
+          gap: "90px",
+          justifyContent: "between",
+          marginBottom: "200px",
         }}
       >
-        {/* Background Layer */}
-        <img
-          ref={bgRef}
-          src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1500&q=60"
-          alt="bg"
-          style={{
-            height: "100%",
-            width: "100%",
-            objectFit: "cover",
-            position: "absolute",
-            top: 0,
-            left: 0,
-          }}
-        />
+        <div>
+          <img
+            ref={addCardRef}
+            src="https://i.pinimg.com/736x/5b/a5/77/5ba5772cfcb3d8fdfdd7394f8456a97e.jpg"
+            style={{ width: "500px", borderRadius: "" }}
+          />
+        </div>
 
-        {/* Foreground Text */}
-        <div
-          ref={textRef}
-          style={{
-            position: "absolute",
-            bottom: "20%",
-            left: "10%",
-            color: "white",
-            zIndex: 10,
-          }}
-        >
-          <h1 style={{ fontSize: "4rem", margin: 0 }}>
-            Unlimited Movies, TV Shows and More
-          </h1>
-          <p style={{ fontSize: "1.5rem" }}>
-            Watch anywhere. Cancel anytime.
-          </p>
+        <div>
+          <img
+            ref={addCardRef}
+            src="https://i.pinimg.com/736x/5b/a5/77/5ba5772cfcb3d8fdfdd7394f8456a97e.jpg"
+            style={{ width: "500px", borderRadius: "",marginTop:"100px"}}
+          />
+          
         </div>
       </div>
 
-      {/* CONTENT BELOW TO SEE PARALLAX */}
-      {/* <div style={{ padding: "150px 20px", color: "white", textAlign: "center" }}>
-        <h2>Scroll down to see the effect 😎</h2>
-      </div> */}
-    </div>
+      {/* === ROW 2 === */}
+     
+       <div
+        style={{
+          display: "flex",
+          gap: "90px",
+          justifyContent: "between",
+          marginBottom: "200px",
+        }}
+      >
+        <div>
+          <img
+            ref={addCardRef}
+            src="https://i.pinimg.com/736x/5b/a5/77/5ba5772cfcb3d8fdfdd7394f8456a97e.jpg"
+            style={{ width: "500px", borderRadius: "" }}
+          />
+       
+        </div>
 
-  )
+        <div>
+          <img
+            ref={addCardRef}
+            src="https://i.pinimg.com/736x/5b/a5/77/5ba5772cfcb3d8fdfdd7394f8456a97e.jpg"
+            style={{width: "500px", borderRadius: "",marginTop:"100px"}}
+          />
+          
+        </div>
+      </div>
+    </div>
+  );
 }
 
-export default Landing
+export default Landing;
