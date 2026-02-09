@@ -1,8 +1,8 @@
 import Header from "../components/Header"
 import BackGround from "../components/BackGround"
 import TextEffect from "../components/TextEffect";
-import Landing from "./Landing";
 import CardGradient from "../components/CardGradient";
+import SplitText from "../components/SplitText";
 
 
 // import React from 'react'
@@ -10,39 +10,61 @@ import CardGradient from "../components/CardGradient";
 
 
 function Home() {
+
+  const handleAnimationComplete = () => {
+  console.log('All letters have animated!');
+};
+
+const commonProps = {
+  delay: 50,
+  duration: 1.25,
+  ease: "power3.out",
+  splitType: "chars",
+  from: { opacity: 0, y: 40 },
+  to: { opacity: 1, y: 0 },
+  threshold: 0.1,
+  rootMargin: "-100px",
+};
+
   return (
     <div>
-      <div style={{ height: "500vh", backgroundColor: "white" }} >
+      <div style={{ height: "300vh", backgroundColor: "white" }} >
+  
         <Header />
         <BackGround />
-        <div className="text text-white" style={{ zindex: "1", position: "relative", padding: "50px", paddingTop: "150px", lineHeight: "0.1px" }}>
-          <TextEffect />
-          <h6 style={{ fontSize: "12px" }} className="lower-text fw-light text-center mt-5">super dan</h6>
-        </div>
+  <div className="relative z-10 text-white flex flex-col px-12 pt-36 items-start">
+
+  <SplitText
+    text="We choose a !"
+    className="md:text-6xl text-4xl font-semibold tracking-widest mb-0"
+    {...commonProps}
+  />
+
+  <SplitText
+    text="Different →"
+    className="md:text-6xl text-4xl font-semibold tracking-widest leading-tight mb-0"
+    {...commonProps}
+  />
+
+  <SplitText
+    text="Starting point"
+    className="md:text-6xl text-4xl font-semibold tracking-widest leading-tight mb-6"
+    {...commonProps}
+  />
+
+  <SplitText
+    text="We are a brand of collective creativity"
+    className="text-xs tracking-widest opacity-70"
+    {...commonProps}
+  />
+
+</div>
 
 
 
-{/* <div className="container"> */}
-    <div className="row text-center">
-  <div className="col-md-2">
-   <div>
-            <p style={{ fontSize: "12px",marginTop:"100px" }} className="lower-text fw-light text-left ms-5 ">super dan</p>
-           <p style={{ fontSize: "12px",marginTop:"" }} className="lower-text fw-light text-left ms-5 ">super dannn</p>
-        <p style={{ fontSize: "12px",marginTop:"" }} className="lower-text fw-light text-left ms-5 ">super dannnnn</p>
-           <p style={{ fontSize: "12px",marginTop:"" }} className="lower-text fw-light text-left ms-5 ">super dannnn</p>
-        <p style={{ fontSize: "12px",marginTop:"" }} className="lower-text fw-light text-left ms-5 ">super dannnn</p>
-           <p style={{ fontSize: "12px",marginTop:"" }} className="lower-text fw-light text-left ms-5 ">super dan</p>
-  
-          </div>
-  </div>
-  <div className="col-md-10  ">
-               <Landing/>
 
-  </div>
-            
-          </div>
 
-{/* </div> */}
+
 
      
        
