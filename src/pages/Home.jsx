@@ -1,78 +1,77 @@
 import Header from "../components/Header"
 import BackGround from "../components/BackGround"
-import TextEffect from "../components/TextEffect";
-import CardGradient from "../components/CardGradient";
 import SplitText from "../components/SplitText";
-
-
-// import React from 'react'
-
-
 
 function Home() {
 
   const handleAnimationComplete = () => {
-  console.log('All letters have animated!');
-};
+    console.log('All letters have animated!');
+  };
 
-const commonProps = {
-  delay: 50,
-  duration: 1.25,
-  ease: "power3.out",
-  splitType: "chars",
-  from: { opacity: 0, y: 40 },
-  to: { opacity: 1, y: 0 },
-  threshold: 0.1,
-  rootMargin: "-100px",
-};
+  const textAnimationProps = {
+    delay: 100,
+    duration: 0.9,
+    ease: "power3.out",
+    splitType: "chars",
+    from: { opacity: 0, y: 40 },
+    to: { opacity: 1, y: 0 },
+    threshold: 0.1,
+    rootMargin: "-100px",
+  };
 
   return (
-    <div>
-      <div style={{ height: "300vh", backgroundColor: "white" }} >
-  
-        <Header />
-        <BackGround />
-  <div className="relative z-10 text-white flex flex-col px-12 pt-36 items-start">
+    <div style={{  backgroundColor: "#F5F1EA" }} className="relative overflow-hidden">
 
-  <SplitText
-    text="We choose a !"
-    className="md:text-6xl text-4xl font-semibold tracking-widest mb-0"
-    {...commonProps}
-  />
+      <Header />
+      <BackGround />
 
-  <SplitText
-    text="Different →"
-    className="md:text-6xl text-4xl font-semibold tracking-widest leading-tight mb-0"
-    {...commonProps}
-  />
-
-  <SplitText
-    text="Starting point"
-    className="md:text-6xl text-4xl font-semibold tracking-widest leading-tight mb-6"
-    {...commonProps}
-  />
-
-  <SplitText
-    text="We are a brand of collective creativity"
-    className="text-xs tracking-widest opacity-70"
-    {...commonProps}
-  />
-
-</div>
-
-
-
-
-
-
+      <div 
+        style={{ fontFamily: "Playfair Display, serif" }} 
+        className="relative z-10 h-screen flex flex-col mt-10 justify-center px-16 text-[#111111]"
+      >
 
      
-       
-   
+
+        {/* Main Heading */}
+        <div className=" ">
+
+         <div> <SplitText text="Where" className="md:text-9xl text-5xl" {...textAnimationProps} onLetterAnimationComplete={handleAnimationComplete} /></div>
+
+<div>
+            <SplitText text="aesthetics and" className="md:text-9xl text-5xl" {...textAnimationProps} />
+  
+</div>
+<div>
+            <SplitText text="functionality" className="md:text-9xl text-5xl" {...textAnimationProps} />
+  
+</div>
+<div>
+            <SplitText text="meet" className="md:text-9xl text-5xl" {...textAnimationProps} />
+  
+</div>
+        </div>
+
+     
+
       </div>
-
+      <div className="md:mt-100 pl-9" style={{fontFamily: "Playfair Display, serif"}}>
+   <SplitText
+                  text="I'M AMGITH"
+                  className="md:text-[250px] text-[50px] font-semibold   md:h-140 h-45 "
+                  delay={100}
+                  duration={0.9}
+                  ease="power3.out"
+                  splitType="chars"
+                  from={{ opacity: 0, y: 40 }}
+                  to={{ opacity: 1, y: 0 }}
+                  threshold={0.1}
+                  rootMargin="-100px"
+                  textAlign="center"
+                  onLetterAnimationComplete={handleAnimationComplete}
+                />
+</div>
     </div>
-
+  
   )
 }
 
