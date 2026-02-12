@@ -20,33 +20,32 @@ function Home() {
   };
 
   return (
-    <div style={{  backgroundColor: "#F5F1EA" }} className="relative overflow-hidden">
+    <div style={{  backgroundColor: "white" }} className="relative overflow-hidden">
 
       <Header />
       <BackGround />
 
       <div 
         style={{ fontFamily: "Playfair Display, serif" }} 
-        className="relative z-10 h-screen flex flex-col mt-10 justify-center px-16 text-[#111111]"
+        className="relative z-10  flex flex-col mt-30 justify-center px-16 text-[#ffffff]"
       >
 
      
 
-        {/* Main Heading */}
         <div className=" ">
 
-         <div> <SplitText text="Where" className="md:text-9xl text-5xl" {...textAnimationProps} onLetterAnimationComplete={handleAnimationComplete} /></div>
+         <div> <SplitText text="Where" className="md:text-3xl text-5xl" {...textAnimationProps} onLetterAnimationComplete={handleAnimationComplete} /></div>
 
 <div>
-            <SplitText text="aesthetics and" className="md:text-9xl text-5xl" {...textAnimationProps} />
+            <SplitText text="aesthetics and" className="md:text-3xl text-5xl" {...textAnimationProps} />
   
 </div>
 <div>
-            <SplitText text="functionality" className="md:text-9xl text-5xl" {...textAnimationProps} />
+            <SplitText text="functionality" className="md:text-3xl text-5xl" {...textAnimationProps} />
   
 </div>
 <div>
-            <SplitText text="meet" className="md:text-9xl text-5xl" {...textAnimationProps} />
+            <SplitText text="meet" className="md:text-3xl text-5xl" {...textAnimationProps} />
   
 </div>
         </div>
@@ -54,7 +53,7 @@ function Home() {
      
 
       </div>
-      <div className="md:mt-100 pl-9" style={{fontFamily: "Playfair Display, serif"}}>
+      <div className="md:mt-10 pl-9" style={{fontFamily: "Playfair Display, serif"}}>
    <SplitText
                   text="I'M AMGITH"
                   className="md:text-[250px] text-[50px] font-semibold   md:h-140 h-45 "
