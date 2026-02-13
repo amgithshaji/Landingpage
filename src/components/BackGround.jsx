@@ -3,9 +3,9 @@ import LiquidEther from './LiquidEther';
 function BackGround() {
   return (
     <div>
-        <div style={{ width: '100%', height: 450, position: 'absolute',backgroundColor:"#07090D" }}>
+        <div style={{ width: '100%', height: 400, position: 'absolute',backgroundColor:"bl" }}>
   <LiquidEther
-colors={[ '#5227FF', '#FF9FFC', '#B19EEF' ]}
+colors={[ 'yellow', 'blue', 'blue' ]}
     mouseForce={20}
     cursorSize={200}
     isViscous={false}
